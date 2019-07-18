@@ -30,7 +30,7 @@ def dfs(graph, start):
     stack = [start]
     
     while(stack):
-        #QueueÀÏ¶§´Â pop(0)À¸·Î °¡Àå ÃÖ±Ù¿¡ µé¾î°£ ¿ø¼Ò¸¦ »«´Ù.
+        #Queueï¿½Ï¶ï¿½ï¿½ï¿½ pop(0)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±Ù¿ï¿½ ï¿½ï¿½î°£ ï¿½ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½.
         node = stack.pop()
         if node not in visited:
             visited.append(node)
