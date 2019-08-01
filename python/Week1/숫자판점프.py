@@ -18,8 +18,6 @@ def solve(str, cnt, x, y):
             ny = y+dy[i]
             if(nx>=0 and nx<n and ny>=0 and ny<n):
                 solve(str,cnt+1 ,nx, ny)
-                    
-            
 
 for i in range(n):
     for j in range(n):        
