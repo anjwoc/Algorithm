@@ -16,4 +16,4 @@ def solve(c):
                 solve(c+1)
                 a.pop()
                 count[i]+=1
-#solve(0)
+solve(0)
