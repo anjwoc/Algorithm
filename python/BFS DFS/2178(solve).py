@@ -8,7 +8,7 @@ def main():
         temp  = sys.stdin.readline()
         for j in range(y):
             data[i][j] = int(temp[j])
-    #print(data)
+    #print(number)
     visit = [[0]*y for _ in range(x)]
     
     dx = [0,0,1,-1]

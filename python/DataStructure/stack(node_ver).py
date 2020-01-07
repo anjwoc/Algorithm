@@ -38,7 +38,7 @@ if __name__=="__main__":
     stk.push(4)
     stk.push(5)
 
-    print("peek of data : {}".format(stk.peek()))
+    print("peek of number : {}".format(stk.peek()))
     
     while not stk.is_empty():
         print(stk.pop())
