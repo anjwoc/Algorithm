@@ -1,3 +1,9 @@
-a = [(1, 3), (2, 5), (3, 2), (4, 3)]
-for (idx, val) in enumerate(a):
-  print(idx, val)
+import sys
+input = sys.stdin.readline
+
+def solve(idx):
+  
+
+if __name__ == "__main__":
+  n = int(input())
+  solve(0)
