@@ -8,7 +8,7 @@ def check(x):
     # 위쪽 혹은 대각선을 확인
     if row[x] == row[i]:
       return False
-    if abs(row[x] - row[i]) == x-i:
+    if abs(row[x] - row[i]) == abs(x-i):
       return False
   return True
   
