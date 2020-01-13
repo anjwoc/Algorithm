@@ -11,6 +11,7 @@ def check(x):
     if abs(row[x] - row[i]) == x-i:
       return False
   return True
+  
 
 # x번째 행에 대하여 처리
 def dfs(x):
