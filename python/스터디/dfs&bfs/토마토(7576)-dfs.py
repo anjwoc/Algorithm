@@ -20,10 +20,13 @@ def dfs(tomato):
   global ans
   global maps
 
+  if tomato == []:
+    print('-1')
+    sys.exit()
   if zero_check(maps) == -1:
     print(ans)
-    quit()
-  
+    sys.exit()
+
   # 새로운 토마토 좌표들 저장
   new_tomato = []
   
@@ -35,7 +38,7 @@ def dfs(tomato):
       if nx>=0 and nx<n and ny<m and ny>=0 and maps[nx][ny] == 0:
         new_tomato.append((nx, ny))
         maps[nx][ny] = 1
-    pretty_print(maps) 
+    # pretty_print(maps)
   ans += 1
   dfs(new_tomato)
 

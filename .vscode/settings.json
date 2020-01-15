@@ -4,5 +4,6 @@
         "string": "cpp",
         "xiosbase": "cpp",
         "xlocale": "cpp"
-    }
+    },
+    "python.pythonPath": "E:\\Program files\\python_version\\Python3.7.3\\python.exe"
 }
