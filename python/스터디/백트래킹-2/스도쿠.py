@@ -1,6 +1,6 @@
 import sys
 input = sys.stdin.readline
-
+sys.setrecursionlimit(10**8)
 def pretty_print():
   for row in maps:
     for val in row:
@@ -24,7 +24,7 @@ def vertical(y, val):
 def three(x, y, val):
   nx = x//3 * 3
   ny = y//3 * 3
-  for i in range(3):
+  for i in range(3):  
     for j in range(3):
       if val == maps[nx+i][ny+j]:
         return False
@@ -50,5 +50,5 @@ for _ in range(9):
   maps.append(list(map(int, input().split())))
 
 blank_list = [(i, j) for i in range(9) for j in range(9) if maps[i][j] == 0]
-print(blank_list)
+
 dfs(0)
