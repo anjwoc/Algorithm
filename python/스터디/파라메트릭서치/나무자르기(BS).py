@@ -9,7 +9,6 @@ def treeSum(height):
   for i in tree:
     if i-height > 0:
       sum += (i-height)
-
   return sum
 
 def BSearch(target):
