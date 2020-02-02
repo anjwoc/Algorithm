@@ -11,7 +11,9 @@ for _ in range(t):
     ai, bi = map(int, input().split())
     form.append((ai, bi))
   ans = 0
-  form.sort(reverse = True)
+  
+  form.sort(reverse = True) # 이거 잘못됌 lambda로 키 지정해야된다.
+
   for i in range(m):
     for j in range(1, n+1, 1):
       if not check[j] and form[i][0] <= j and j <= form[i][1]:

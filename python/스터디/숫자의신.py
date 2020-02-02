@@ -1,6 +1,6 @@
 import sys
 import heapq
-input = lambda: sys.stdin.readline().strip()
+input = lambda: sys.stdin.readline()
 
 k, n = map(int, input().split())
 arr = []
@@ -10,11 +10,8 @@ pr = 0
 # 들어온만큼 이용해야한다.
 for _ in range(k):
   tmp = input()
-  print(type(tmp))
-  arr.append((int(tmp[0]), tmp)
-  # print(tmp[0])
-  # first = int(tmp[0])
-  heapq.heappush(heap, (-first, tmp))
+  arr.append((int(tmp[0]), tmp))
+  heapq.heappush(heap, (-tmp, tmp))
 
 for _ in range(len(heap)):
   if len(heap)>=0:
@@ -23,4 +20,4 @@ for _ in range(len(heap)):
     # 숫자들을 1번 이상 사용할 경우
     print(type(arr))
     print(type(arr[1]))
-    
+    print(max(arr, key=lambda num: num[0])
