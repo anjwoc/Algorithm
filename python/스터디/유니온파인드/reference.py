@@ -85,6 +85,3 @@ if isCycle(g):
 	print('Graph contains cycle') 
 else: 
 	print('Graph does not contain cycle') 
-
-# This code is contributed by 
-# Sampath Kumar Surine 

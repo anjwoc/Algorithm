@@ -17,8 +17,8 @@ def union(parents, x, y, cnt):
   a = getParent(parents, x)
   b = getParent(parents, y)
   if a!=b:
-    parents[b] = a
-    cnt[a] += cnt[b]
+  parents[b] = a
+  cnt[a] += cnt[b]
 
 # 루트 찾기
 def find(x, parents):
@@ -31,18 +31,18 @@ for _ in range(int(input())):
   parents = {}
   cnt = {}
   for _ in range(int(input())):
-    fr1, fr2 = input().split()
+  fr1, fr2 = input().split()
 
-    if fr1 not in parents:
-      parents[fr1] = fr1
-      cnt[fr1] = 1
-    
-    if fr2 not in parents:
-      parents[fr2] = fr2
-      cnt[fr2] = 1
+  if fr1 not in parents:
+    parents[fr1] = fr1
+    cnt[fr1] = 1
+  
+  if fr2 not in parents:
+    parents[fr2] = fr2
+    cnt[fr2] = 1
 
-    union(parents, fr1, fr2, cnt)
-    print(cnt[find(fr1, parents)])
+  union(parents, fr1, fr2, cnt)
+  print(cnt[find(fr1, parents)])
 
 
 
