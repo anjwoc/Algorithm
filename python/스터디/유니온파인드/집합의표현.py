@@ -18,7 +18,6 @@ def Find(x):
     parent[x] = y
     return y
 
-
 def Union(x, y):
   global parent
   x = Find(x)

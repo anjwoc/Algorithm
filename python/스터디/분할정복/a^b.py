@@ -10,6 +10,7 @@ a = a.replace('.','')
 result = str(int(a)**int(b))
 p=str((10**p)**int(b))
 index = len(result)-len(p)+1
+
 if index >= 0:
   print('%s.%s' %(result[:index], result[index:]))
 else:
