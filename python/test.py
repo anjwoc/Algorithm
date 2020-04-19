@@ -1,29 +1,33 @@
+from itertools import permutations
 
-def solution(begin, target, words):
-    ans = [begin]
-    if target not in words:
-        return 0
-    ans_cnt = 0
-    while(len(words) != 0):
-        for char in ans:
-            tmp = []
-            for word in words:
-                cnt = 0
-                for i in range(len(char)):
-                    if char[i] != word[i]:
-                        cnt += 1
-                    if cnt == 2:
-                        break
-                if cnt == 1:
-                    tmp.append(word)
-                    words.remove(word)
-        ans_cnt += 1
-        if target in tmp:
-            return ans_cnt
-        else:
-            ans = tmp
-    return 0
 
-begin, target, words = "hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"]
+def solution(s):
+    answer = 0
 
-print(solution(begin, target, words))
+    new_s = list(s)
+    for i in range(2, len(s) + 1):
+        pm = list(permutations(s, i))
+        for j in pm:
+            if len(j) <= len(s):
+                new_s.append("".join(j))
+    new_s = list(set([int(x) for x in new_s]))
+    print(new_s)
+    if new_s.count(1):
+        new_s.remove(1)
+    print(new_s)
+    if new_s.count(0):
+        new_s.remove(0)
+
+    for x in new_s:
+        i = 2
+        while i * i <= x:
+            if x % i == 0:
+                answer -= 1
+                break
+            i += 1
+        answer += 1
+
+    return answer
+
+
+print(solution("17"))
