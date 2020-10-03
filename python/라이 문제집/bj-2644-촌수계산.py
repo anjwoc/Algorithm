@@ -31,4 +31,3 @@ def bfs(v, target):
     return -1
 
 print(bfs(p1, p2))
-
