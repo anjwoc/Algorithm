@@ -35,10 +35,6 @@ for height in range(max_height+1):
             if visited[i][j] == 0 and arr[i][j] > height:
                 bfs(i, j, visited, cnt, height)
                 cnt += 1
-    # print("----------------")
-    # print(visited)
-    # print(cnt-1)
-    # print("----------------")
     ans = max(ans, cnt-1)
 
 print(ans)
