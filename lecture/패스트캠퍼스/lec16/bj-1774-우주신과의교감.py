@@ -20,10 +20,17 @@ def union(parent, u, v):
     a = find(parent, u)
     b = find(parent, v)
 
-    if a < b:
+    if rank[a] > rank[b]:
         parent[b] = a
     else:
         parent[a] = b
+        if rank[a] == rank[b]:
+            rank[b] += 1
+
+    # if a < b:
+    #     parent[b] = a
+    # else:
+    #     parent[a] = b
 
 
 def make_set(node):
@@ -34,6 +41,7 @@ def make_set(node):
 n, m = map(int, input().split())
 edges = []
 parent = {}
+rank = {}
 locations = []
 
 for _ in range(n):
@@ -48,6 +56,7 @@ for i in range(length - 1):
 
 for i in range(1, n + 1):
     parent[i] = i
+    rank[i] = 0
 
 for i in range(m):
     a, b = map(int, input().split())
