@@ -1,33 +1,41 @@
-import sys, heapq
+import sys
+import heapq
+
 input = sys.stdin.readline
 
+
 def dijkstra(start):
-    heap_data = []
-    heapq.heappush(heap_data, (0, start))
+    heap = []
+    # (cost, start)
+    heapq.heappush(heap, (0, start))
     distance[start] = 0
-    while heap_data:
-        dist, now = heapq.heappop(heap_data)
+    while heap:
+        dist, now = heapq.heappop(heap)
+
         if distance[now] < dist:
             continue
-        for i in adj[now]:
+
+        for i in arr[now]:
             cost = dist + i[1]
             if distance[i[0]] > cost:
                 distance[i[0]] = cost
-                heapq.heappush(heap_data, (cost, i[0]))
+                heapq.heappush(heap, (cost, i[0]))
 
 
 for _ in range(int(input())):
-    n, m, start = map(int, input().split())
-    adj = [[] for i in range(n+1)]
-    distance = [1e9] * (n+1)
-    for _ in range(m):
-        x, y, cost = map(int, input().split())
-        adj[y].append((x, cost))
-    dijkstra(start)
+    n, d, c = map(int, input().split())
+    arr = [[] for _ in range(n + 1)]
+    INF = sys.maxsize
+    distance = [INF] * (n + 1)
+    for _ in range(d):
+        a, b, s = map(int, input().split())
+        arr[b].append((a, s))
+    dijkstra(c)
+
     cnt = 0
     max_distance = 0
     for i in distance:
-        if i != 1e9:
+        if i != INF:
             cnt += 1
             if i > max_distance:
                 max_distance = i
