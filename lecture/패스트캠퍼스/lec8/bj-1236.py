@@ -1,5 +1,6 @@
 import sys
-input = lambda: sys.stdin.readline().strip()
+def input(): return sys.stdin.readline().strip()
+
 
 def check(arr, r, c):
     chk = True
@@ -9,6 +10,7 @@ def check(arr, r, c):
         if arr[i][c] == 'X':
             chk = False
     return chk
+
 
 n, m = map(int, input().split())
 cnt = 0
