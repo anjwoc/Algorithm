@@ -2,7 +2,6 @@ import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
 arr = sorted(map(int, input().split()))
-check = [False] * (n+1)
 ans = []
 
 
