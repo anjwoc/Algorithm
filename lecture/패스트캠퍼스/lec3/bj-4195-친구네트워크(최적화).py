@@ -1,22 +1,24 @@
 import sys
-input = lambda: sys.stdin.readline().strip()
+def input(): return sys.stdin.readline().strip()
+
 
 def find(x):
     if x == parent[x]:
         return x
     else:
-        p = find(parent[x])
-        parent[x] = p
+        parent[x] = find(parent[x])
         return parent[x]
+
 
 def union(x, y):
     x = find(x)
     y = find(y)
 
-    if x!= y:
+    if x != y:
         parent[y] = x
         number[x] += number[y]
-    
+
+
 tc = int(input())
 
 for _ in range(tc):
@@ -33,8 +35,6 @@ for _ in range(tc):
         if y not in parent:
             parent[y] = y
             number[y] = 1
-        
+
         union(x, y)
         print(number[find(x)])
-
-
