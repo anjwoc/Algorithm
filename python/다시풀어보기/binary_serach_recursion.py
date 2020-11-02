@@ -6,19 +6,18 @@ def binary_search_recursion(target, start, end, data):
 
     if data[mid] == target:
         return mid
-    elif data[mid] > target:
-        end = mid - 1
-    else:
+    elif data[mid] < target:
         start = mid + 1
+    else:
+        end = mid - 1
 
     return binary_search_recursion(target, start, end, data)
 
 
-# 테스트용 코드
-if __name__ == '__main__':
-    li = [i*3 for i in range(11)]
-    target = 6
-    idx = binary_search_recursion(target, 0, 10, li)
-
-    print(li)
-    print(idx)
+lst = [i**2 for i in range(11)]
+target = 9
+idx = binary_search_recursion(target, 0, len(lst) - 1, lst)
+if idx:
+    print(lst[idx])
+else:
+    print("None")
