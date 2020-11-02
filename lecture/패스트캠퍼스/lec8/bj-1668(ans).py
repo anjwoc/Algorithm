@@ -7,6 +7,7 @@ def ascending(arr):
             now = arr[i]
     return ans
 
+
 n = int(input())
 arr = []
 for _ in range(n):
