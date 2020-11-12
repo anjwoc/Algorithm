@@ -23,6 +23,6 @@ for _ in range(m):
                     print(i)
     elif qcategory == 1:
         for target in arr:
-            key = list(target.keys())[0]
+            key = list(*target.keys())[0]
             if qname in target[key]:
                 print(key)
