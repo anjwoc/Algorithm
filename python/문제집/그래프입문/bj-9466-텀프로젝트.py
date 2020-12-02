@@ -26,6 +26,8 @@ def dfs(x):
   if visited[number]:
     if number in cycle:
       # 사이클이 되는 구간부터만 팀을 이룬다.
+      # 배열을 합치지 않고 길이만 더해줘서 최적화
+      # 4300ms에서 3300ms정도로 약 1000ms이 빨라짐
       ans += len(cycle[cycle.index(number):])
     return
   else:
