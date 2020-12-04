@@ -2,7 +2,6 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
-# dx, dy = (-1, 0, 0, 1, -1, 1, -1, 1), (1, 0, 0, -1, 1, -1, 1, -1)
 dx = [-1, 1, 0, 0, -1, 1, -1, 1]
 dy = [0, 0, -1, 1, -1, 1, 1, -1]
 
