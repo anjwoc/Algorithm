@@ -23,17 +23,20 @@ def command(length, num, cmd):
     return (num - 1) % 10000
   elif cmd == 'L':
     if length != 4:
-      num *= 10
+      # num *= 10
+      num << 1
     else:
       num, d = divmod(num, 10**(length-1))
       num += (d*10)
     return num
   elif cmd == 'R':
     if length == 1:
-      num = num * 1000
+      # num = num * 1000
+      num << 3
     else:
       num, d = divmod(num, 10)
-      num += (d*1000)
+      # num += (d*1000)
+      num += (d<<3)
     return num
 
 
