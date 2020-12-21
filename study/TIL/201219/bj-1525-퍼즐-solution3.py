@@ -12,10 +12,10 @@ def bfs():
   while que:
     v = que.popleft()
     step = visited.get(v)
-    if v == '123456789':
+    if v == '123456780':
       return visited[v]
     
-    k = v.find('9')
+    k = v.find('0')
     # x, y = divmod(k, 3) => divmod함수는 큰 숫자일때 효과적이다.
     x, y = k // 3, k % 3 # 3X3표일 때 x,y 좌표
     
@@ -40,5 +40,4 @@ maps=''
 for _ in range(3):
   maps+=''.join(input().split())
 
-maps = maps.replace('0', '9')
 print(bfs())
