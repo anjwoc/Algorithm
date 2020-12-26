@@ -9,9 +9,7 @@ def solution(P, S):
     for i in range(len(P)):
         if (100-P[i]) % S[i] != 0:
             days.append(((100-P[i])//S[i])+1)
-            # days.append(((100-P[i])//S[i]))
         else:
-            # days.append(((100-P[i])//S[i])+1)
             days.append(((100-P[i])//S[i]))
 
     print(days)
