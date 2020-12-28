@@ -68,7 +68,7 @@ def rotate_right180(arr):
     return ans
 
 
-pretty_print(rotate_right180(arr))
+# pretty_print(rotate_right180(arr))
 
 
 # 270도는 왼쪽으로 90도와 동일하다.
