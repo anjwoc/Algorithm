@@ -1,33 +1,24 @@
-from itertools import permutations
+from collections import deque, defaultdict
 
 
-def solution(s):
-    answer = 0
+def solution(n, edge):
+    adj = [[] for _ in range(n+1)]
+    dist = [0 for _ in range(n)]
+    visited = [0 for _ in range(n)]
+    que = deque([0])
+    visited[0] = 1
 
-    new_s = list(s)
-    for i in range(2, len(s) + 1):
-        pm = list(permutations(s, i))
-        for j in pm:
-            if len(j) <= len(s):
-                new_s.append("".join(j))
-    new_s = list(set([int(x) for x in new_s]))
-    print(new_s)
-    if new_s.count(1):
-        new_s.remove(1)
-    print(new_s)
-    if new_s.count(0):
-        new_s.remove(0)
+    for a, b in edget:
+        adj[a].append(b)
+        adj[b].append(a)
 
-    for x in new_s:
-        i = 2
-        while i * i <= x:
-            if x % i == 0:
-                answer -= 1
-                break
-            i += 1
-        answer += 1
+    while que:
+        v = que.popleft()
+        for i in adj[v]:
+            if not visited[i]:
+                visited[i] = 1
+                dist[i] += 1
+                que.append(i)
 
-    return answer
-
-
-print(solution("17"))
+    dist.sort(reverse=True)
+    ans = dist.count(dist[0])
