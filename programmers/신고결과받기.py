@@ -1,7 +1,7 @@
 def solution(id_list, report, k):
     answer = []
     
-    store = {} // 각 유저가 어떤 사람을 신고했는지 저장
+    store = {} // 각 유저가 어떤 사람을 신고했는지 저장 
     count = {} // 각 유저들이 몇 번의 신고를 받는지 저장
     memory = set() // 신고했던 내역을 저장(중복된 사항은 거를수 있도록 Set을 사용)
     
