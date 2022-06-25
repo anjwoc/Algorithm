@@ -17,11 +17,15 @@ def fibo2(n):
     global dp
     if n == 0:
         return 0
+
     if n == 1:
         return 1
+
     if dp[n] != 0:
         return dp[n]
+
     dp[n] = fibo2(n-1) + fibo2(n-2)
+    
     return dp[n]
 
 n = int(input())
