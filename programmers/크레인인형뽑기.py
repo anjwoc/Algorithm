@@ -2,7 +2,7 @@ def solution(board, moves):
     stacks = []
     ans = 0
 
-    def push(ans, st, item):
+    def push(st, item):
         if len(st) > 0 and st[-1] == item:
             st.pop()
             return 2
@@ -17,7 +17,7 @@ def solution(board, moves):
             if cur == 0:
                 continue
             else:
-                num = push(ans, stacks, board[x][idx])
+                num = push(stacks, board[x][idx])
                 board[x][idx] = 0
                 ans += num
                 break
